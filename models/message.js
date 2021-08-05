@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 		name: String,
 		message: String,
 	},
-	{ collection: "messages", timestamps: true }
+	{ collection: "message", timestamps: true }
 )),
 	// model is very important, point to the right database(model) name to get access correctly
 	(Message = mongoose.model("Messages", messageSchema));

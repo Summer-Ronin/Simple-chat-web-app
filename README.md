@@ -1,5 +1,13 @@
 # How to use and how we made it
 
+- [How to use and how we made it](#how-to-use-and-how-we-made-it)
+  - [👉 All things we use](#-all-things-we-use)
+  - [👉 Database side](#-database-side)
+    - [🖥️ How to set up MongoDB local db](#️-how-to-set-up-mongodb-local-db)
+    - [🐛 Error you may have during MongoDB setup](#-error-you-may-have-during-mongodb-setup)
+
+
+
 ## 👉 All things we use
 
 -   Mongodb
@@ -18,7 +26,7 @@
 
 ### 🐛 Error you may have during MongoDB setup
 
-#### `couldn't connect to server 127.0.0.1:27017  - connection could be mute because the target machine actively refused it`
+`couldn't connect to server 127.0.0.1:27017  - connection could be mute because the target machine actively refused it`
 
 - This happens because your machine has not started MongoDB as a service
 

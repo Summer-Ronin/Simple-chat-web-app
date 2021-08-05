@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="./css/style.css" />
 		<link
 			rel="stylesheet"
 			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -12,16 +12,23 @@
 			crossorigin="anonymous"
 		/>
 		<title>Ronin simple Chat app</title>
-        <link rel="shortcut icon" href="https://img.icons8.com/doodle/32/000000/weixing.png" type="image/x-icon">
+		<link
+			rel="shortcut icon"
+			href="https://img.icons8.com/doodle/32/000000/weixing.png"
+			type="image/x-icon"
+		/>
 
-		<script src="./node_modules/socket.io/client-dist/socket.io.js"></script>
-		<script>
-			var socket = io();
-		</script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/jBox/1.3.3/jBox.all.min.css"
+			integrity="sha512-nFY49gtmPRBEmtfDD+M5eJynOp9Pmdvr95Ck9iDvUt7VH7VByO5/E25MB/hzgSix8RFM6AlulSHuUteAhGqI4A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 	</head>
 	<body>
 		<div id="chat-container">
-			<form>
+			<form id="message_form">
 				<div class="form-group">
 					<h1>Send <span id="sencond-letter">Message</span></h1>
 
@@ -29,6 +36,7 @@
 						type="text"
 						class="form-control col-xs-12 col-md-6"
 						placeholder="Enter your name"
+						id="user_name"
 					/>
 				</div>
 				<div class="form-group">
@@ -36,11 +44,30 @@
 						type="text"
 						class="form-control col-xs-12 col-md-6"
 						placeholder="Enter your message"
+						id="user_mess"
 					/>
 				</div>
 
-				<button type="submit" class="btn">Send</button>
+				<button type="submit" class="btn" id="send">Send</button>
+
+				<div id="messages_viewer"></div>
 			</form>
 		</div>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jBox/1.3.3/jBox.all.min.js"
+			integrity="sha512-lcO0bt0QjKjwKMYawS/z2H1GU1lREkirqC9PyU5TyaYqAYRlVG7dLhed9PML6dg3PSMypqTuP9Y7N+32U7fA9g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<script src="./js/main.js"></script>
 	</body>
 </html>
