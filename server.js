@@ -10,13 +10,14 @@ app.use(bodyParser.urlencoded({extended: false}))
 var mongoose = require('mongoose');
 
 //  Connect to database
-var connection = require("./database")
+var connection = require("./config/database")
 
-app.use(express.static(__dirname));
+// Define static dirname
+app.use(express.static("views"));
 
 // Index page serving
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/views/index.html');
 });
 
 io.on('connection', (socket) => {
