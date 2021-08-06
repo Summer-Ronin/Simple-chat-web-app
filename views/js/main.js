@@ -1,8 +1,19 @@
 /**
- * First thing to do here is to use JBox and perform form validation
+ * First thing is to get all the messages from db first
+ * to do here is to use JBox and perform form validation
  * Then we perform what we need to perform
  */
 $(document).ready(function () {
+	// Get all messages from db and send to client side
+	$.get("/messages", (data) => {
+		data.forEach(function (mess) {
+			$("#messages_viewer").append(`
+                <h4> ${mess.name} </h4>
+                <p>  ${mess.message} </p>
+            `);
+		});
+	});
+
 	$("#send").click(function (event) {
 		event.preventDefault();
 
@@ -19,7 +30,7 @@ $(document).ready(function () {
 			});
 		}
 
-		// add messages to client view
+		// add messages
 		addMessage({
 			name: $("#user_name").val(),
 			message: $("#user_mess").val(),
@@ -32,10 +43,14 @@ $(document).ready(function () {
 
 // add message to client side
 function addMessage(message) {
+	// write new message to client side
 	$("#messages_viewer").append(`
         <h4> ${message.name} </h4>
         <p>  ${message.message} </p>
     `);
+
+	// write new message to db
+	$.post("/messages", message);
 }
 
 // get messages from db

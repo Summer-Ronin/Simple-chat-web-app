@@ -1,6 +1,5 @@
 var express = require("express");
-const { Server } = require("socket.io");
-const io = new Server(server);
+const io = require("socket.io")(server);
 var app = express();
 
 var bodyParser = require("body-parser");
@@ -30,11 +29,19 @@ app.get("/messages", (req, res) => {
 	});
 });
 
+io.on("connection", () => {
+	console.log("a user is connected");
+    connnections.push(socket)
+});
+
 app.post("/messages", (req, res) => {
 	var message = new Message(req.body);
 	message.save((err) => {
 		if (err) sendStatus(500);
-		res.sendStatus(200);
+		io.emit('message', req.body)
+
+        console.log(req.body)
+        res.sendStatus(200);
 	});
 });
 
