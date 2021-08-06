@@ -22,6 +22,7 @@
 ### 🖥️ How to set up MongoDB local db
 
 -   Travel to this [link](https://attacomsian.com/blog/nodejs-mongodb-local-connection) for more
+-   Or travel to [this repo](https://github.com/NhutNguyen236/Simple-login-page-with-NodeJS) for more cause I have already put all the notes of how to install and implement db locally here, go check it out 😉
 
 ### 🐛 Error you may have during MongoDB setup
 
@@ -52,4 +53,24 @@
     ```
 
     - You must see your MongoDB now in your services control panel, start it now
+
+### Build a database to work with
+- After all, you need to go to that MongoDB Compass or just using your CMD skill to create a database named "Messages" and a collection named "message" to be compatible with our project
+
+## Client side
+- As its name, we are going to keep it simple so the UI is easy to be noticed, nothing much, minimal and cut-off
+
+<p align="center">
+    <img src="./assets/demo.gif"/>
+</p>
+
+- All things you can do is entering names and messages
+- Yes, a "Go to top button" too
+
+## Server side
+- We use routes to identify the functions, where to get messages and where to send them
+- Socket is opend in post route to write messages to database and also to display them to client side
+
+## Modules we used
+- Go to [`packages.json`](package.json) for more 😉
 

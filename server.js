@@ -41,8 +41,8 @@ app.post("/messages", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-    console.log("Number of connection: ", io.engine.clientsCount)
-})
+	console.log("Number of connection: ", io.engine.clientsCount);
+});
 
 http.listen(port, () => {
 	console.log(`Socket.IO server running at http://localhost:${port}/`);
