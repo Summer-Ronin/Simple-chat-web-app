@@ -3,17 +3,16 @@
  * to do here is to use JBox and perform form validation
  * Then we perform what we need to perform
  */
+var socket = io();
+
 $(document).ready(function () {
 	// Get all messages from db and send to client side
-	$.get("/messages", (data) => {
-		data.forEach(function (mess) {
-			$("#messages_viewer").append(`
-                <h4> ${mess.name} </h4>
-                <p>  ${mess.message} </p>
-            `);
-		});
-	});
+	getMessage()
 
+    /**
+     * First validate the form, if it is all OK then
+     * we send the message to database but not yet send back to client side cause we will perform that using socket later
+     */
 	$("#send").click(function (event) {
 		event.preventDefault();
 
@@ -28,18 +27,26 @@ $(document).ready(function () {
 				content: "Name or Message is empty",
 				color: "red",
 			});
+		} 
+        else {
+            // send new message to db
+            sendMessage({
+                name: $("#user_name").val(),
+			    message: $("#user_mess").val(),
+            })
+
+			// empty all inputs using form reset 
+			$("#message_form")[0].reset();
 		}
-
-		// add messages
-		addMessage({
-			name: $("#user_name").val(),
-			message: $("#user_mess").val(),
-		});
-
-		// empty all inputs
-		$("#message_form")[0].reset();
 	});
+
+	socket.on('message', addMessage)
 });
+
+// send message to database
+function sendMessage(message){
+	$.post("/messages", message);
+}
 
 // add message to client side
 function addMessage(message) {
@@ -48,10 +55,13 @@ function addMessage(message) {
         <h4> ${message.name} </h4>
         <p>  ${message.message} </p>
     `);
-
-	// write new message to db
-	$.post("/messages", message);
 }
 
 // get messages from db
-function getMessage() {}
+function getMessage() {
+    $.get('/messages', (messages) => {
+        messages.forEach(function(mess){
+            addMessage(mess)
+        })
+    })
+}

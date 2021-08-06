@@ -4,14 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./css/style.css" />
+
 		<link
 			rel="stylesheet"
-			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-			crossorigin="anonymous"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
 		/>
-		<title>Ronin simple Chat app</title>
+
+		<title>A simple Chat app</title>
 		<link
 			rel="shortcut icon"
 			href="https://img.icons8.com/doodle/32/000000/weixing.png"
@@ -25,33 +24,42 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="./css/style.css" />
 	</head>
 	<body>
-		<div id="chat-container">
-			<form id="message_form">
-				<div class="form-group">
-					<h1>Send <span id="sencond-letter">Message</span></h1>
+		<div class="row">
+			<div id="chat-container" class="">
+				<form id="message_form">
+					<div class="form-group form-group-lg mt-3">
+						<h1>Send <span id="sencond-letter">Message</span></h1>
 
-					<input
-						type="text"
-						class="form-control col-xs-12 col-md-6"
-						placeholder="Enter your name"
-						id="user_name"
-					/>
-				</div>
-				<div class="form-group">
-					<input
-						type="text"
-						class="form-control col-xs-12 col-md-6"
-						placeholder="Enter your message"
-						id="user_mess"
-					/>
-				</div>
+						<input
+							type="text"
+							class="form-control col-xs-12 col-md-6"
+							placeholder="Enter your name"
+							id="user_name"
+						/>
+					</div>
+					<div class="form-group form-group-lg mt-3">
+						<input
+							type="text"
+							class="form-control col-xs-12 col-md-6"
+							placeholder="Enter your message"
+							id="user_mess"
+						/>
+					</div>
 
-				<button type="submit" class="btn" id="send">Send</button>
+					<button type="submit" class="btn mt-3" id="send">Send</button>
+				</form>
+			</div>
+		</div>
 
+		<div class="row">
+			<div id="message-container">
 				<div id="messages_viewer"></div>
-			</form>
+			</div>
 		</div>
 
 		<script

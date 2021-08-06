@@ -1,6 +1,5 @@
-# How to use and how we made it
+# 📩 Just a simple Chat App 
 
-- [How to use and how we made it](#how-to-use-and-how-we-made-it)
   - [👉 All things we use](#-all-things-we-use)
   - [👉 Database side](#-database-side)
     - [🖥️ How to set up MongoDB local db](#️-how-to-set-up-mongodb-local-db)
