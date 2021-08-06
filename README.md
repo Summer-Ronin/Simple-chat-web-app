@@ -2,6 +2,7 @@
 
 - [📩 Just a simple Chat App](#-just-a-simple-chat-app)
   - [👉 All things we use](#-all-things-we-use)
+  - [💻 How to start this app locally](#-how-to-start-this-app-locally)
   - [👉 Database side](#-database-side)
     - [🖥️ How to set up MongoDB local db](#️-how-to-set-up-mongodb-local-db)
     - [🐛 Error you may have during MongoDB setup](#-error-you-may-have-during-mongodb-setup)
@@ -15,6 +16,12 @@
 -   Express.js
 -   Node.js
 -   Socket.io
+## 💻 How to start this app locally
+
+- Just use this simple command and that's it
+```bash
+npm start
+```
 
 ## 👉 Database side
 
