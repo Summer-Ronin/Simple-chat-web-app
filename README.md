@@ -1,12 +1,14 @@
 # 📩 Just a simple Chat App 
 
+- [📩 Just a simple Chat App](#-just-a-simple-chat-app)
   - [👉 All things we use](#-all-things-we-use)
   - [👉 Database side](#-database-side)
     - [🖥️ How to set up MongoDB local db](#️-how-to-set-up-mongodb-local-db)
     - [🐛 Error you may have during MongoDB setup](#-error-you-may-have-during-mongodb-setup)
-
-
-
+    - [Build a database to work with](#build-a-database-to-work-with)
+  - [Client side](#client-side)
+  - [Server side](#server-side)
+  - [Modules we used](#modules-we-used)
 ## 👉 All things we use
 
 -   Mongodb
